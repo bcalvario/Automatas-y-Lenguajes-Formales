@@ -15,10 +15,13 @@ public class GrammarReader {
 	private String cadena;
 
 	/** Arreglo de cadenas que contiene las */
-	private String[] productions;
+	private char[] productions;
 
 	/** Arreglo de cadenas que contiene las */
-	private String[] coproduction;
+	private char[] coproduction1;
+
+	/** Arreglo de cadenas que contiene las */
+	private char[] coproduction2;
 
 	/**
 	 * Constructor
@@ -37,7 +40,7 @@ public class GrammarReader {
 		if (args.length != 2) {
 			System.out.print(args.length + "Faltan argumentos\n");
 		} else {
-			archivo = args[0];
+			this.archivo = args[0];
 			try {
 				FileReader f = new FileReader(archivo);
 				BufferedReader lector = new BufferedReader(f);
@@ -52,17 +55,26 @@ public class GrammarReader {
 				System.err.println("No se encontro el archivo");
 			}
 
-			cadena = args[1];
-			productions = new String[producciones.size()];
-			coproduction = new String[producciones.size()];
+			this.cadena = args[1];
+			this.productions = new char[producciones.size()];
+			this.coproduction1 = new char[producciones.size()];
+			this.coproduction2 = new char[producciones.size()];
+
 
 			for (int i = 0; i < producciones.size(); i++) {
 				String aux = producciones.get(i);
 				aux = aux.substring(0, 1);
-				productions[i] = aux;
+				this.productions[i] = aux.charAt(0);
 				aux = producciones.get(i);
 				aux = aux.substring(3, aux.length());
-				coproduction[i] = aux;
+				if (aux.length() == 1) {
+					this.coproduction1[i] = aux.charAt(0);
+					this.coproduction2[i] = '0';
+				}
+				if (aux.length() == 2) {
+					this.coproduction1[i] = aux.charAt(0);
+					this.coproduction2[i] = aux.charAt(1);
+				}
 			}
 		}
 	}
@@ -73,7 +85,7 @@ public class GrammarReader {
 	 * @return archivo El nombre del archivo.
 	 */
 	public String getArchivo() {
-		return archivo;
+		return this.archivo;
 	}
 
 	/**
@@ -82,7 +94,7 @@ public class GrammarReader {
 	 * @return cadena La cadena que se analizará.
 	 */
 	public String getCadena() {
-		return cadena;
+		return this.cadena;
 	}
 
 	/**
@@ -90,8 +102,8 @@ public class GrammarReader {
 	 * 
 	 * @return productions El arreglo con las producciones.
 	 */
-	public String[] getProductions() {
-		return productions;
+	public char[] getProductions() {
+		return this.productions;
 	}
 
 	/**
@@ -99,8 +111,17 @@ public class GrammarReader {
 	 * 
 	 * @return productions El arreglo con las co-producciones.
 	 */
-	public String[] getCoproduction() {
-		return coproduction;
+	public char[] getCoproduction1() {
+		return this.coproduction1;
+	}
+
+	/**
+	 * Regresa el arreglo con las co-producciones.
+	 * 
+	 * @return productions El arreglo con las co-producciones.
+	 */
+	public char[] getCoproduction2() {
+		return this.coproduction2;
 	}
 
 	/**
@@ -114,7 +135,7 @@ public class GrammarReader {
 		String cadena = "";
 
 		for (int i = 0; i < productions.length; i++) {
-			cadena += "Produccion: " + productions[i] + ", coproduction: " + coproduction[i] + "\n";
+			cadena += "Produccion: " + productions[i] + ", coproduccion1: " + coproduction1[i] + ", coproduccion2: " + coproduction2[i] + "\n";
 		}
 
 		return cadena;

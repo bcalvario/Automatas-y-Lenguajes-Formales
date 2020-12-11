@@ -4,6 +4,7 @@ public class ChomsyGrammar {
 	char[] productions;
 	char[] coproduction1;
 	char[] coproduction2;
+
 	// Ambos arreglos deben tener la misma longitud.
 	// La entrada i de productions deriva en la entrada i de coproductions.
 	// La entrada 0 contiene la prosucción inicial
@@ -24,7 +25,7 @@ public class ChomsyGrammar {
 		//Inicializar el arreglo de escalera
 		HashSet<Character>[][] derivationTable = new HashSet[length][];
 		for (int i = 0; i < length; i++) {
-			derivationTable[i] = new HashSet[length-i];
+			derivationTable[i] = new HashSet[length - i];
 		}
 
 		// Subcadenas de longitud 1
@@ -48,5 +49,4 @@ public class ChomsyGrammar {
 
 		grammar.getDerivationTableof("abba");
 	}
-
 }
