@@ -1,11 +1,22 @@
 import java.util.HashSet;
 
-public class ChomsyGrammar {
+/**
+ * La clase representa una gramática libre de contexto G
+ * en forma normal de Chomsky
+ */
+public class ChomskyGrammar {
 	char[] productions;
 	char[] coproduct1;
 	char[] coproduct2;
 
-	public ChomsyGrammar (char[] productions, char[] coproduct1, char[] coproduct2) {
+	/**
+	 * Constructor de una gramática en forma normal de Chomsky.
+	 * @param productions es un elemento no ter
+	 * @param coproduct1
+	 * @param coproduct2
+	 */
+	public ChomskyGrammar(char[] productions, char[] coproduct1,
+						  char[] coproduct2) {
 		this.productions = productions;
 		this.coproduct1 = coproduct1;
 		this.coproduct2 = coproduct2;
@@ -46,5 +57,5 @@ public class ChomsyGrammar {
 
 		return  derivationTable;
 	}
-	
+
 }
