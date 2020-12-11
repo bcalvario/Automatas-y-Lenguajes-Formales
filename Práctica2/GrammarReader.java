@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class GrammarReader {
 
 	/**
-	 * Método de lectura
-	 *
-	 * @param file argumentos
+	 * Método de lectura.
+	 * @param file dirección del archivo que será traducido.
+	 *             Debe cumplir con las condiciones descritas en
+	 *             el README.
 	 */
 	public static ChomskyGrammar readChomskyGrammar(String file) {
 		ArrayList<String> productionsArray = new ArrayList<>();
