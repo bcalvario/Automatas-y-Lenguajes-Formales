@@ -1,5 +1,6 @@
-    S->B
-S- >A
-B-   >aSa
+    S->BA
+S- >AA
+B-   >SA
 B->b
 A->  a
+           S->BB
