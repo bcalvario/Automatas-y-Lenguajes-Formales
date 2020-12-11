@@ -3,7 +3,7 @@ import java.util.HashSet;
 public class Main {
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.print(args.length + "Faltan argumentos\n");
+            System.out.print("Faltan argumentos.\n");
         } else {
             ChomskyGrammar grammar = GrammarReader.readChomskyGrammar(args[0]);
             HashSet[][] table = grammar.getDerivationTableOf(args[1]);

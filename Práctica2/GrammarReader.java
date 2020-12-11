@@ -1,7 +1,6 @@
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class GrammarReader {
 
@@ -21,7 +20,7 @@ public class GrammarReader {
 			}
 			lector.close();
 		} catch (Exception e) {
-			System.err.println("Error: No se encontró el archivo");
+			System.err.println("No se encontró el archivo");
 		}
 
 		int size = productionsArray.size();

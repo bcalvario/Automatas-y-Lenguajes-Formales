@@ -11,9 +11,9 @@ public class ChomskyGrammar {
 
 	/**
 	 * Constructor de una gramática en forma normal de Chomsky.
-	 * @param productions es un elemento no ter
-	 * @param coproduct1
-	 * @param coproduct2
+	 * @param productions es un arreglo de elementos no terminal.
+	 * @param coproduct1 es un arreglo con primer elemento del producto.
+	 * @param coproduct2 es un arreglo con el segundo elemento del producto.
 	 */
 	public ChomskyGrammar(char[] productions, char[] coproduct1,
 						  char[] coproduct2) {
@@ -22,14 +22,27 @@ public class ChomskyGrammar {
 		this.coproduct2 = coproduct2;
 	}
 
-	public boolean hasRightChar (char character, int i) {
-		return coproduct2[i] == character;
+	/**
+	 * Es usado para determinar si una producción tiene un carácter en
+	 * la derecha.
+	 * @param character será buscado.
+	 * @param production es la que se analizará.
+	 * @return true si la producción tiene a character en la derecha.
+	 */
+	public boolean hasRightChar (char character, int production) {
+		return coproduct2[production] == character;
 	}
 
+	/**
+	 * El método calcula la tabla de derivación proporcionada por el
+	 * Algoritmo CKY.
+	 * @param word es la palabra a la que se le aplicará el algoritmo.
+	 * @return la tabla de derivación del algoritmo.
+	 */
 	public HashSet<Character>[][] getDerivationTableOf(String word) {
 		int length = word.length();
 
-		HashSet[][] derivationTable = new HashSet[length][];
+		HashSet<Character>[][] derivationTable = new HashSet[length][];
 		for (int i = 0; i < length; i++) {
 			derivationTable[i] = new HashSet[i+1];
 		}
@@ -57,5 +70,4 @@ public class ChomskyGrammar {
 
 		return  derivationTable;
 	}
-
 }
