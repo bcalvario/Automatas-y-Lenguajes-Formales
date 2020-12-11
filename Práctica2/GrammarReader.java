@@ -68,41 +68,47 @@ public class GrammarReader {
 	}
 
 	/**
-     * Regresa la cadena con el nombre del archivo.
-     * @return archivo El nombre del archivo.
-     */
+	 * Regresa la cadena con el nombre del archivo.
+	 * 
+	 * @return archivo El nombre del archivo.
+	 */
 	public String getArchivo() {
 		return archivo;
 	}
 
 	/**
-     * Regresa la cadena con la cadena que se analizará.
-     * @return cadena La cadena que se analizará.
-     */
+	 * Regresa la cadena con la cadena que se analizará.
+	 * 
+	 * @return cadena La cadena que se analizará.
+	 */
 	public String getCadena() {
 		return cadena;
 	}
 
 	/**
-     * Regresa el arreglo con las producciones.
-     * @return productions El arreglo con las producciones.
-     */
+	 * Regresa el arreglo con las producciones.
+	 * 
+	 * @return productions El arreglo con las producciones.
+	 */
 	public String[] getProductions() {
 		return productions;
 	}
 
 	/**
-     * Regresa el arreglo con las co-producciones.
-     * @return productions El arreglo con las co-producciones.
-     */
+	 * Regresa el arreglo con las co-producciones.
+	 * 
+	 * @return productions El arreglo con las co-producciones.
+	 */
 	public String[] getCoproduction() {
 		return coproduction;
 	}
 
 	/**
-     * Regresa la cadena con las producciones y co-producciones respectivamente.
-     * @return cadena La cadena con las producciones y co-producciones respectivamente.
-     */
+	 * Regresa la cadena con las producciones y co-producciones respectivamente.
+	 * 
+	 * @return cadena La cadena con las producciones y co-producciones
+	 *         respectivamente.
+	 */
 	public String aCadena() {
 
 		String cadena = "";
