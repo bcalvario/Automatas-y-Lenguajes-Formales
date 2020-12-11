@@ -1,6 +1,9 @@
-    S->BA
-S- >AA
-B-   >SA
-B->b
-A->  a
-           S->BB
+S->AB
+S->BA
+S->SS
+S->AC
+S->BD
+A-> a
+B-> b
+C->SB
+D->SA
