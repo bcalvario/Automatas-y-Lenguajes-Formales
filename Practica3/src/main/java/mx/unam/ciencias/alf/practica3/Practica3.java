@@ -1,4 +1,5 @@
-import java.io.FileReader;
+package mx.unam.ciencias.alf.practica3;
+
 import com.google.gson.Gson;
 
 /**
@@ -10,11 +11,10 @@ import com.google.gson.Gson;
 
 
 public class Practica3 {
-    public static void main(String args[]) throws java.io.IOException {
 
-        Gson g = new Gson();
+    public static void main(String[] args) {
+        //Gson g = new Gson();
 
         System.out.println("Hola");
     }
- 
 }
