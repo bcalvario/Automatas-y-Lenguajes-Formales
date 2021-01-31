@@ -1,7 +1,6 @@
 package mx.unam.ciencias.alf.practica3;
 
 import com.google.gson.Gson;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -11,6 +10,11 @@ import java.io.FileReader;
  */
 public class MTReader {
 
+    /**
+     * Método para convertir un archivo .json a un objeto tipo MaquinaDeTuring
+     * @param file es la dirección del archivo.
+     * @return la máquina de Turing codificada en el archivo.
+     */
     public static MaquinaDeTuring readTM(String file) {
         String json = "";
         try {
