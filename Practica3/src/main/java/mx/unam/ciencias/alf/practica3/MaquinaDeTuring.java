@@ -37,7 +37,7 @@ public class MaquinaDeTuring {
         System.out.println();
     }
 
-    public boolean imprimeEjecución(String palabra) {
+    public boolean imprimeEjecucion(String palabra) {
         List<Character> cinta = new ArrayList<>(palabra.length());
         for (int i = 0; i < palabra.length(); i++)
             cinta.add(palabra.charAt(i));
