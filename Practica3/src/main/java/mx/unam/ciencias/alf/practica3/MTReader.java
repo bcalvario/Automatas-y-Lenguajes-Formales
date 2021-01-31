@@ -7,11 +7,11 @@ import java.io.FileReader;
 
 /**
  * Esta clase provee de las herramientas necesarias para leer un archivo tipo
- * JSON y convertirlo en un objeto tipor MáquinaDeTuring.
+ * JSON y convertirlo en un objeto tipor MaquinaDeTuring.
  */
-public class TMReader {
+public class MTReader {
 
-    public static MáquinaDeTuring readTM(String file) {
+    public static MaquinaDeTuring readTM(String file) {
         String json = "";
         try {
             FileReader f = new FileReader(file);
@@ -25,6 +25,7 @@ public class TMReader {
             System.err.println("No se encontró el archivo");
         }
         Gson gson = new Gson();
-        return gson.fromJson(json, MáquinaDeTuring.class);
+        return gson.fromJson(json, MaquinaDeTuring.class);
     }
+
 }

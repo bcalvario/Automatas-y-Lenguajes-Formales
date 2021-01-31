@@ -42,7 +42,7 @@
 	<configuration>
 	  <archive>
 	    <manifest>
-	      <mainClass>mx.unam.ciencias.alf.practica3.Practica3</mainClass>
+	      <mainClass>mx.unam.ciencias.alf.practica3.Main</mainClass>
 	    </manifest>
 	  </archive>
 	</configuration>
