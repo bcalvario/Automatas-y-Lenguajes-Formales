@@ -7,4 +7,4 @@ mvn compile
 
 mvn install
 
-java -jar target/practica3.jar
+mvn -q exec:java -Dexec.mainClass=mx.unam.ciencias.alf.practica3.Main
