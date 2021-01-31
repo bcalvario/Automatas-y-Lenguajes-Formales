@@ -57,7 +57,7 @@ public class MaquinaDeTuring {
                         if (posicion >= cinta.size()) {
                             cinta.add(Blanco);
                         }
-                    } else {
+                    } else if (Transiciones[deltaAct][4].charAt(0) == 'L'){
                         if (posicion == 0) {
                             cinta.add(0, Blanco);
                         } else {
