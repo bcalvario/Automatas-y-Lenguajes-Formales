@@ -1,7 +1,5 @@
 package mx.unam.ciencias.alf.practica3;
 
-import com.google.gson.Gson;
-
 import java.util.Scanner;
 
 public class Main {

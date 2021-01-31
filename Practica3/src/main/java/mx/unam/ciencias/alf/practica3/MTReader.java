@@ -1,7 +1,11 @@
 package mx.unam.ciencias.alf.practica3;
 
-import com.google.gson.Gson;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 /**
@@ -16,20 +20,30 @@ public class MTReader {
      * @return la máquina de Turing codificada en el archivo.
      */
     public static MaquinaDeTuring readTM(String file) {
-        String json = "";
+        JSONParser jsonParser = new JSONParser();
         try {
-            FileReader f = new FileReader(file);
-            BufferedReader lector = new BufferedReader(f);
-            String linea;
-            while ((linea = lector.readLine()) != null) {
-                json += linea;
-            }
-            lector.close();
+            FileReader reader = new FileReader(file);
+
+            Object obj = jsonParser.parse(reader);
+            JSONObject tmJason = (JSONObject) obj;
+
+            return parseTM(tmJason);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (Exception e) {
-            System.err.println("No se encontró el archivo");
+            e.printStackTrace();
         }
-        Gson gson = new Gson();
-        return gson.fromJson(json, MaquinaDeTuring.class);
+        return null;
+    }
+
+    public static MaquinaDeTuring parseTM(JSONObject tmJason) {
+        MaquinaDeTuring mt = new MaquinaDeTuring();
+
+        return mt;
+    }
+
+    public static void main(String[] args) {
+        MaquinaDeTuring mt = readTM("examples/0^n1^n.json");
     }
 
 }
