@@ -17,7 +17,8 @@ mvn -q exec:java -Dexec.mainClass=mx.unam.ciencias.alf.practica3.Main
 El programa pedirá la dirección del archivo JSON del cuál se extraerá la
 información de la Máquina de Turing. Nuestra implementación de la MT requerida
 en la práctica (0^n1^n) está en la carpeta _examples/_ y se llama
-_0^n1^n.json_, en esta carpeta también se encuentra _M.json_ que es la
+_0^n1^n.json_, en esta carpeta también se encuentra _0^n1^n.pdf_ que es la 
+representación escrita de dicha máquina y el archivo _M.json_ que es la
 máquina de Turing que está como ejemplo en la especificación de la práctica.
 Un ejemplo de ejecución es:
 ```
@@ -31,4 +32,4 @@ Inserte la cadena de entrada : 0011
 definida, queriendo decir con esto que los elementos en las trasiciones
 forman parte de los estados o la cinta según sea el caso.
   - El algoritmo sí revisa que la cadena proporcionada en la ejecución 
-forme parte del lenguaje del alfabeto de la máquina de Túring.
+forme parte del lenguaje del alfabeto de la máquina de Turing.
