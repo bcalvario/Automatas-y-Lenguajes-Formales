@@ -8,26 +8,19 @@ import java.util.List;
  * Esta clase representa una máquina de Turing.
  */
 public class MaquinaDeTuring {
-    String[] Estados;
     char[] Entrada;
-    char[] Cinta;
     String Inicial;
     char Blanco;
     String[] Finales;
     String[][] Transiciones;
 
     /**
-     * Constructor vacío, es necesario para la ejecución de Gson.
-     */
-    public MaquinaDeTuring() {}
-
-    /**
      * Este método representa la función delta de la máquina.
      * @param estado entrada para la función delta.
      * @param símbolo entrada para la función delta.
-     * @return un entero mayor o igual a cero con la posicion de
-     * la transicion buscada en Transiciones, -1 si la funcion no
-     * esta definida para los valores de entrada.
+     * @return un entero mayor o igual a cero con la posición de
+     * la transicion correspondiente en Transiciones, -1 si la función
+     * de transición no está definida para los valores de entrada.
      */
     public int delta(String estado, char símbolo) {
         for (int i = 0; i < Transiciones.length; i++) {
@@ -80,7 +73,7 @@ public class MaquinaDeTuring {
      * Imprime la ejecución de esta máquina de Turing con
      * la cadena dada.
      * @param cadena a ser ejecutada.
-     * @return true si la cadena forma parte del lenguaje de esta
+     * @return true si la cadena forma parte del lenguaje de ésta
      * máquina de Turing, false en otro caso.
      */
     public boolean imprimeEjecucion(String cadena) {

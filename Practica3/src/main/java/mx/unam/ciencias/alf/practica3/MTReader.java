@@ -9,7 +9,7 @@ import java.io.FileReader;
 
 /**
  * Esta clase provee de las herramientas necesarias para leer un archivo tipo
- * JSON y convertirlo en un objeto tipor MaquinaDeTuring.
+ * JSON y convertirlo en un objeto tipo MaquinaDeTuring.
  */
 public class MTReader {
 
@@ -38,22 +38,19 @@ public class MTReader {
         return parseTM(tmJson);
     }
 
+    /**
+     * Lee los datos de un JSONObject y los pasa a un objeto
+     * tipo MaquinaDeTuring.
+     * @param tmJason es el objeto del que se extraerá la información
+     *                de la máquina de Turing.
+     * @return la máquina de Turing con los datos correspondientes.
+     */
     public static MaquinaDeTuring parseTM(JSONObject tmJason) {
         MaquinaDeTuring mt = new MaquinaDeTuring();
         JSONArray jsonArray = (JSONArray) tmJason.get("Entrada");
         mt.Entrada = new char[jsonArray.size()];
         for (int i = 0; i < jsonArray.size(); i++) {
             mt.Entrada[i] = ((String) jsonArray.get(i)).charAt(0);
-        }
-        jsonArray = (JSONArray) tmJason.get("Estados");
-        mt.Estados = new String[jsonArray.size()];
-        for (int i = 0; i < jsonArray.size(); i++) {
-            mt.Estados[i] = (String) jsonArray.get(i);
-        }
-        jsonArray = (JSONArray) tmJason.get("Cinta");
-        mt.Cinta = new char[jsonArray.size()];
-        for (int i = 0; i < jsonArray.size(); i++) {
-            mt.Cinta[i] = ((String) jsonArray.get(i)).charAt(0);
         }
         mt.Inicial = (String) tmJason.get("Inicial");
         mt.Blanco = ((String) tmJason.get("Blanco")).charAt(0);
@@ -70,11 +67,6 @@ public class MTReader {
             }
         }
         return mt;
-    }
-
-    public static void main(String[] args) {
-        MaquinaDeTuring mt = readTM("examples/0^n1^n.json");
-        System.out.println();
     }
 
 }
