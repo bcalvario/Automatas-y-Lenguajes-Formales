@@ -1,0 +1,10 @@
+S->AX
+S->VW
+X->BB
+A->BV
+A->WV
+B->VY
+Y->AT
+T->WS
+V-> a
+W-> b
